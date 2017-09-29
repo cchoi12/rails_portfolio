@@ -22,3 +22,24 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Portfolio Application
+> This is going to be a simple portfolio.
+
+### Features
+- Real time chat engines
+- Blog
+- portfolio
+- Drag and droppin
+
+### Code examples
+
+```ruby
+  def my_great_method
+    puts 'here it is mang'
+  end
+```
+
+```javascript
+  var what = what;
+```
