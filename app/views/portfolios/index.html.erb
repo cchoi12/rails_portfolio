@@ -4,6 +4,6 @@
   <p><%= portfolio_item.title %></p>
   <p><%= portfolio_item.subtitle %></p>
   <p><%= portfolio_item.body %></p>
-  <p><%= image_tag portfolio_item.thumb_image %></p>
+  <%= portfolio_item.thumb_image.nil? ? (image_tag 'http://via.placeholder.com/350x200?text=Placeholder') : (image_tag portfolio_item.thumb_image) %>
   <hr />
 <% end %>
