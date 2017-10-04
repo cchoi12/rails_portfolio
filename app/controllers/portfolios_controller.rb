@@ -21,6 +21,21 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def edit
+    @portfolio_item = Portfolio.find_by(id: params[:id])
+  end
+
+  def update
+    @portfolio_item = Portfolio.find_by(id: params[:id])
+
+    if @portfolio_item.update(portfolio_params)
+      redirect_to portfolios_path
+    else
+      redirect_to portfolios_path, notice: 'Unsuccessful dude'
+    end
+  end
+
+
   private
 
   def portfolio_params
