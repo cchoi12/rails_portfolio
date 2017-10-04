@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    @portfolio_item = Portfolio.find_by(id: params[:id])
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
   def new
@@ -22,11 +22,11 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
-    @portfolio_item = Portfolio.find_by(id: params[:id])
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
   def update
-    @portfolio_item = Portfolio.find_by(id: params[:id])
+    @portfolio_item = Portfolio.find(params[:id])
 
     if @portfolio_item.update(portfolio_params)
       redirect_to portfolios_path
@@ -35,7 +35,9 @@ class PortfoliosController < ApplicationController
     end
   end
 
-
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
   private
 
   def portfolio_params
