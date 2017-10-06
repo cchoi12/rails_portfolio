@@ -3,7 +3,7 @@ class Portfolio < ApplicationRecord
 
   after_initialize :set_defaults
 
-  # This is the samething as a scope like line #9.
+  # This is the samething as a scope like line | scope :angular_portfolio_items |.
   # def self.angular
   #   where(subtitle: 'Angular')
   # end
