@@ -1,6 +1,8 @@
 module DeviseWhitelist
   extend ActiveSupport::Concern
 
+  # included do comes from ActiveSupport::Concern, this allows us to add a
+  # before_action to the controller we include it into.
   included do
     # if: :devise_controller means it will only run if it is a devise related action
     before_action :configure_permitted_parameters, if: :devise_controller?
