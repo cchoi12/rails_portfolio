@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  # path: '', path_names: { current_name: 'new name' } changes the routes names 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  
+
   resources :portfolios, except: [:show, :edit]
 
   get 'angular-items', to: 'portfolios#angular'
