@@ -14,6 +14,7 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    @seo_keywords = @portfolio_item.body
   end
 
   def new
