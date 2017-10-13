@@ -1,6 +1,9 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: %i[show edit update destroy]
 
+  # layout '' assigns a specific layout view template.
+  layout 'portfolio'
+
   def index
     @portfolio_items = Portfolio.all
   end
