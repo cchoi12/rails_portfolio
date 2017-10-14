@@ -8,6 +8,7 @@
 <p>
   <strong>Body:</strong>
   <%= @blog.body %>
+  <%= @blog.topic.title %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
