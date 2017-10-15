@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/cchoi12/ava_ruby_gem
+  revision: 49b343262abbb4f98a4d157826de8d06ef9758c8
+  specs:
+    ava_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -194,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ava_view_tool!
   bootstrap (~> 4.0.0.beta)
   byebug
   coffee-rails (~> 4.2)
