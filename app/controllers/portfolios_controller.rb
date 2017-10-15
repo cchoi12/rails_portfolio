@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, only: %i[show edit update destroy]
+  before_action :set_portfolio_item, only: %i[edit update show destroy]
 
   # layout '' assigns a specific layout view template.
   layout 'portfolio'
@@ -17,7 +17,6 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    @seo_keywords = @portfolio_item.body
   end
 
   def new
@@ -66,7 +65,7 @@ class PortfoliosController < ApplicationController
                                      )
   end
 
-  def set_portfolio
+  def set_portfolio_item
     @portfolio_item = Portfolio.find(params[:id])
   end
 end

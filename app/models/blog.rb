@@ -6,4 +6,12 @@ class Blog < ApplicationRecord
   friendly_id :title, use: :slugged
 
   validates_presence_of :title, :body
+
+  def self.special_blog
+    all
+  end
+
+  def self.featured_blog
+    limit(2)
+  end
 end
