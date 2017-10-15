@@ -7,7 +7,6 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.special_blog
     @page_title = 'My Blog'
-    binding.pry
   end
 
   # GET /blogs/1
