@@ -1,9 +1,12 @@
-<h1>Portfolio Items</h1>
+<div class="album text-muted">
+  <div class="container">
 
-<%= link_to 'Create a new Item', new_portfolio_path if logged_in?(:site_admin) %>
-
-<!-- So! You can pass a partial by not having the exact name for the index action.
-     You can pass partial: which is the actual name of the partial file
-     Also you can pass the collection (which isn't the actual name of the index action to collection!)
--->
-<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+    <div class="row">
+      <!-- So! You can pass a partial by not having the exact name for the index action.
+           You can pass partial: which is the actual name of the partial file
+           Also you can pass the collection (which isn't the actual name of the index action to collection!)
+      -->
+      <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+    </div>
+  </div>
+</div>
