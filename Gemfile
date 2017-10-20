@@ -58,4 +58,5 @@ gem 'jquery-rails'
 gem 'ava_view_tool', '~> 0.1.0'
 gem 'petergate', '~> 1.8'
 gem "font-awesome-rails"
-gem 'kaminari', '~> 1.0', '>= 1.0.1' 
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+gem 'jquery-ui-rails'
