@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  # path: '', path_names: { current_name: 'new name' } changes the routes names 
+  # path: '', path_names: { current_name: 'new name' } changes the routes names
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
-  resources :portfolios, except: [:show, :edit]
+  resources :portfolios, except: [:show]  do
+    put :sort, on: :collection
+  end
 
   get 'angular-items', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
