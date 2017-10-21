@@ -1,13 +1,21 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: %i[edit update show destroy]
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:sort, :destroy, :new, :create, :update, :edit]}, site_admin: :all
 
 
   # layout '' assigns a specific layout view template.
   layout 'portfolio'
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
+  end
+
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    head :no_content
   end
 
   def angular
