@@ -7,6 +7,9 @@ class Portfolio < ApplicationRecord
 
   after_initialize :set_defaults
 
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
+
   # This is the samething as a scope like line | scope :angular_portfolio_items |.
   # def self.angular
   #   where(subtitle: 'Angular')

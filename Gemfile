@@ -60,3 +60,7 @@ gem 'petergate', '~> 1.8'
 gem "font-awesome-rails"
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 gem 'jquery-ui-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
