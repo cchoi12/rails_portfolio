@@ -1,19 +1,18 @@
 class Portfolio < ApplicationRecord
-  has_many :technologies
-  accepts_nested_attributes_for :technologies, reject_if: lambda { |attrs| attrs['name'].blank? }
-
   include Placeholder
-  validates_presence_of :title, :body
 
   after_initialize :set_defaults
 
-  mount_uploader :thumb_image, PortfolioUploader
-  mount_uploader :main_image, PortfolioUploader
+  has_many :technologies
 
-  # This is the samething as a scope like line | scope :angular_portfolio_items |.
-  # def self.angular
-  #   where(subtitle: 'Angular')
-  # end
+  has_attached_file :show_image, styles: { medium: "300x300>", thumb: "200x75>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :thumbnail_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+
+  accepts_nested_attributes_for :technologies, reject_if: lambda { |attrs| attrs['name'].blank? }
+
+  validates_presence_of :title, :body
+  validates_attachment_content_type :show_image, content_type: /\Aimage\/.*\z/
+  validates_attachment_content_type :thumbnail_image, content_type: /\Aimage\/.*\z/
 
   scope :angular_portfolio_items, -> { where(subtitle: 'Angular') }
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }
@@ -29,4 +28,9 @@ end
 # or the '||=' mean?
 # if self.main_image == nil
 #   self.main_image = 'http://via.placeholder.com/600x400'
+# end
+
+# This is the samething as a scope like line | scope :angular_portfolio_items |.
+# def self.angular
+#   where(subtitle: 'Angular')
 # end
