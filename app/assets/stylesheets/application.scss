@@ -29,7 +29,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #2d3c48;
 }
 body {
   color: #fff;
@@ -196,7 +195,7 @@ body {
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -100;
+  z-index: -1;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   background: image-url('home_bg.png') no-repeat;
