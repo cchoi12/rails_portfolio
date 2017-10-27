@@ -63,3 +63,4 @@ gem 'jquery-ui-rails'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+gem "cocoon"
