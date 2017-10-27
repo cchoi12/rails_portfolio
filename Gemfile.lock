@@ -61,6 +61,7 @@ GEM
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.10)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -90,6 +91,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gritter (1.2.0)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -240,12 +242,13 @@ DEPENDENCIES
   aws-sdk (~> 2.3)
   bootstrap (~> 4.0.0.beta)
   byebug
-  carrierwave (~> 1.0)
+  cocoon
   coffee-rails (~> 4.2)
   devise
   dotenv-rails (~> 2.2, >= 2.2.1)
   font-awesome-rails
   friendly_id (~> 5.1.0)
+  gritter (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails

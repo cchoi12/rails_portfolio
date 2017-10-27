@@ -6,7 +6,9 @@ class Portfolio < ApplicationRecord
   has_attached_file :show_image, styles: { medium: "300x300>", thumb: "200x75>" }, default_url: 'http://via.placeholder.com/600x400'
   has_attached_file :thumbnail_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: 'http://via.placeholder.com/200x175'
 
-  accepts_nested_attributes_for :technologies, reject_if: lambda { |attrs| attrs['name'].blank? }
+  accepts_nested_attributes_for :technologies,
+                                allow_destroy: true,
+                                reject_if: lambda { |attrs| attrs['name'].blank? }
 
   validates_presence_of :title, :body
   validates_attachment_content_type :show_image, content_type: /\Aimage\/.*\z/
