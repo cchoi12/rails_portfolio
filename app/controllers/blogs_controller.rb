@@ -11,9 +11,12 @@ class BlogsController < ApplicationController
     @page_title = 'My Blog'
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
+  # In a performance POV, includes is a SQL call that includes :comments.
+  # this is to prevent the DB from getting hit more than once.
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+
     @page_title = @blog.title
     @seo_keywords = @blog.body
   end
