@@ -18,11 +18,15 @@ class BlogsController < ApplicationController
   # In a performance POV, includes is a SQL call that includes :comments.
   # this is to prevent the DB from getting hit more than once.
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
 
-    @page_title = @blog.title
-    @seo_keywords = @blog.body
+      @page_title = @blog.title
+      @seo_keywords = @blog.body
+    else
+      redirect_to blogs_path, notice: 'Not Authorized'
+    end
   end
 
   # GET /blogs/new
