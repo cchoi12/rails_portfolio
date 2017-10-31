@@ -10,6 +10,8 @@ class Blog < ApplicationRecord
 
   validates_presence_of :title, :body
 
+  scope :recent_blogs, -> { order("created_at desc") }
+
   def self.special_blog
     all
   end
