@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   # path: '', path_names: { current_name: 'new name' } changes the routes names
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
@@ -20,6 +19,8 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+
+  mount ActionCable.server => '/cable'
 
   root to: 'pages#home'
 end
