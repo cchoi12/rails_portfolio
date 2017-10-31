@@ -8,6 +8,11 @@ class TopicController < ApplicationController
   end
 
   def show
+    if logged_in?(:site_admin)
+      @blogs = @topic.blogs.recent_blogs.page(params[:page]).per(5)
+    else
+      @blogs = @topic.blogs.published.recent_blogs.page(params[:page]).per(5)
+    end
   end
 
   private

@@ -1,8 +1,8 @@
 <div class="container col-sm-8">
   <h1><%= @topic.title %></h1>
   <hr />
-  <h3>Related Blogs</h3>
-  <% @topic.blogs.each do |topic_blog| %>
-    <p><%= link_to topic_blog.title, topic_blog %></p>
-  <% end %>
-</div>
+
+  <%= paginate @blogs %>
+  <%= render @blogs %>
+  <%= paginate @blogs %>
+ </div>
