@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :topic, only: [:index, :show]
+
   mount ActionCable.server => '/cable'
 
   root to: 'pages#home'
