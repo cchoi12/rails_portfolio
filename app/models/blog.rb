@@ -10,7 +10,7 @@ class Blog < ApplicationRecord
 
   validates_presence_of :title, :body, :topic_id
 
-  scope :recent_blogs, -> { order("created_at desc") }
+  scope :recent_blogs, -> { order("created_at DESC") }
 
   def self.special_blog
     all
