@@ -1,4 +1,5 @@
 class TopicController < ApplicationController
+  before_action :set_sidebar_topics
   before_action :load_topic, only: [:show]
 
   layout "blog"
@@ -16,6 +17,10 @@ class TopicController < ApplicationController
   end
 
   private
+
+  def set_sidebar_topics
+    @side_bar_topics = Topic.with_blogs
+  end
 
   def load_topic
     @topic = Topic.find(params[:id])
