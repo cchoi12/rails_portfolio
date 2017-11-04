@@ -46,7 +46,7 @@ module ApplicationHelper
       },
       {
         url: tech_news_path,
-        title: 'Trending Rails'
+        title: 'Trending'
       }
     ]
   end
