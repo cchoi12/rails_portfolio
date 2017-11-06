@@ -26,14 +26,28 @@ a:hover {
  * Base structure
  */
 
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Raleway', sans-serif;
+
 html,
 body {
   height: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -221,12 +235,28 @@ body {
 
 .about-me {
   color: black;
+  padding: 40px;
 }
 
-.about-me > .image{
-  margin-right: 10px
+.about-me > .card-body {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.contact-container  h1 {
+  color:black;
+}
+
+.contact-container > .card {
+  background: white;
 }
 
 .home-page > .card {
-  background-color: #B2BEB5;
+  margin-top: 10px;
+  background-color: silver;
+}
+
+.skill {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

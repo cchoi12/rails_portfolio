@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   access all: [:show, :index], user: {except: [:toggle_status, :destroy, :new, :create, :update, :edit]}, site_admin: :all
 
@@ -7,18 +8,26 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    if logged_in?(:site_admin)
+      @blogs = Blog.recent_blogs.page(params[:page]).per(5)
+    else
+      @blogs = Blog.recent_blogs.published.page(params[:page]).per(5)
+    end
     @page_title = 'My Blog'
   end
 
   # In a performance POV, includes is a SQL call that includes :comments.
   # this is to prevent the DB from getting hit more than once.
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
 
-    @page_title = @blog.title
-    @seo_keywords = @blog.body
+      @page_title = @blog.title
+      @seo_keywords = @blog.body
+    else
+      redirect_to blogs_path, notice: 'Not Authorized'
+    end
   end
 
   # GET /blogs/new
@@ -90,5 +99,9 @@ class BlogsController < ApplicationController
                                    :body,
                                    :topic_id
                                   )
+    end
+
+    def set_sidebar_topics
+      @side_bar_topics = Topic.with_blogs
     end
 end

@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "gritter";
+@import "trix";
 
 /*
  * Globals
@@ -13,7 +14,7 @@
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Montserrat', sans-serif;
   color: #555;
 }
 
@@ -23,7 +24,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: normal;
   color: #333;
 }
@@ -173,7 +174,7 @@ h6, .h6 {
 // Custom Styles
 
 .social-links li {
-  font-size: 2.5em;
+  font-size: 2.0em;
 }
 
 .comment-card > .card {
@@ -183,4 +184,13 @@ h6, .h6 {
 .comment-attribution {
   font-size: .8em;
   font-style: italic;
+}
+
+.blogcrumb a {
+  font-size: 1.5em;
+  margin: 0px 20px 0px 20px;
+}
+
+.blog-nav {
+  margin-bottom: 30px;
 }

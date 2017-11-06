@@ -4353,7 +4353,7 @@ tbody.collapse.show {
 /* line 227, /Users/Christopher/.rvm/gems/ruby-2.4.2/gems/bootstrap-4.0.0.beta/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: black;
 }
 /* line 232, /Users/Christopher/.rvm/gems/ruby-2.4.2/gems/bootstrap-4.0.0.beta/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-light .navbar-toggler-icon {

@@ -1,10 +1,12 @@
 <div class="col-sm-8 blog-main">
   <h2><%= @blog.title %></h2>
 
-  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
+  <%= render 'blogs/bread_crumbs' %>
 
+  <p><%= @blog.topic.title %></p>
+  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
   <p>
-    <%= @blog.body %>
+    <%= markdown @blog.body %>
   </p>
 
   <%= render 'comments/comment_form' %>
