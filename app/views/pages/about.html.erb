@@ -5,10 +5,10 @@
     </div>
     <div class="card-body">
       <div class="row">
-        <div class="profile_image col-lg-5">
-          <%= image_tag "profile.jpg" %>
+        <div class="profile_image col-md-4">
+          <%= image_tag "profile.jpg", width: 225 %>
         </div>
-        <div class="col-lg-7">
+        <div class="col-md-8">
           <p class="lead">
             My name is Christopher Choi and I am a web developer with experience mainly in Ruby(on Rails),
             but have tinkered with Elixir(Phoenix) and ELM.
@@ -18,6 +18,28 @@
             Since then, I taught myself how to code with the help/inspiration from the dev team.
             Although I am now trying to diversify my skil set, Ruby will always have a special place in my heart.
             Special shoutout to Drew and Loren for inspiring me to go further in code, thank you!
+          </p>
+          <p>
+            <button
+              class="btn btn-info"
+              type="button"
+              data-toggle="collapse"
+              data-target="#jobHistory"
+              aria-expanded="false"
+              aria-controls="jobHistory"
+            >
+            Job History
+          </button>
+          <p>
+            <div class="collapse" id="jobHistory">
+              <div class="card card-body">
+                Web Developer for The Industry | Dec 2016 -
+              </div>
+              <div class="card card-body">
+                Customer Success at Silversheet | Aug 2015 - May 2016
+              </div>
+            </div>
+          </p>
           </p>
         </div>
       </div>

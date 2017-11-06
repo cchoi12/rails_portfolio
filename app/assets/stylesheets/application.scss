@@ -221,6 +221,12 @@ body {
 
 .about-me {
   color: black;
+  padding: 40px;
+}
+
+.about-me > .card-body {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .contact-container  h1 {
