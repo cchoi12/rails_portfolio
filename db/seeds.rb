@@ -31,7 +31,7 @@ puts '--------------------------------------------------------------'
 
 5.times do |skill|
   Skill.create!(
-    title: 'Whooooop Skills #{skill}',
+    title: "Whooooop Skills #{skill}",
     percent_utilized: 15
   )
 end
