@@ -1,3 +1,22 @@
+puts 'Admin being morphed!'
+User.create!(
+  email: 'test@test.com',
+  password: 'password',
+  password_confirmation: 'password',
+  name: 'Admin Dude',
+  roles: 'site_admin'
+)
+puts 'Admin created'
+
+puts 'User being morphed!'
+User.create!(
+  email: 'test1@test.com',
+  password: 'password',
+  password_confirmation: 'password',
+  name: 'User Dude',
+)
+puts 'User created'
+
 puts '--------------------------------------------------------------'
 puts '-------------- THREE TOPICS BEING CREATED --------------------'
 puts '--------------------------------------------------------------'
