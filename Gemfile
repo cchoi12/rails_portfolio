@@ -33,6 +33,7 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'pg'
+  gem 'redis', '~> 4.0', '>= 4.0.1'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -49,7 +50,6 @@ gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 gem "cocoon"
 gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.1'
-gem 'redis', '~> 4.0', '>= 4.0.1'
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'trix'
