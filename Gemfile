@@ -33,7 +33,7 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'pg'
-  gem 'redis', '~> 4.0', '>= 4.0.1'
+  gem 'redis', '~> 3.3.5'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
