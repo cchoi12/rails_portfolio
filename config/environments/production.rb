@@ -90,6 +90,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.active_cable.allowed_request_origins = ['https://chris-rails-portfolio.herokuapp.com/', 'http://chris-rails-portfolio.herokuapp.com/']
+  config.action_cable_url.url = "wss://chris-rails-portfolio.herokuapp.com/cable"
+
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
