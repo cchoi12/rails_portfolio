@@ -91,7 +91,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_cable.allowed_request_origins = ['https://chris-rails-portfolio.herokuapp.com/', 'http://chris-rails-portfolio.herokuapp.com/']
-  config.action_cable_url.url = "wss://chris-rails-portfolio.herokuapp.com/cable"
+  config.action_cable.url = "wss://chris-rails-portfolio.herokuapp.com/cable"
 
   config.paperclip_defaults = {
     storage: :s3,
