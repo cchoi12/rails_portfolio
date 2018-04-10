@@ -1,4 +1,5 @@
 module SocialTool
+  # twitter search, get keys
   def self.twitter_search
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV.fetch("TWITTER_CONSUMER_KEY")
@@ -7,6 +8,7 @@ module SocialTool
       config.access_token_secret = ENV.fetch("TWITTER_ACCESS_TOKEN_SECRET")
     end
 
+    # Search for tweets
     client.search("#rubyonrails", result_type: 'recent').take(6).collect do |tweet|
       "#{tweet.user.screen_name}: #{tweet.text}"
     end

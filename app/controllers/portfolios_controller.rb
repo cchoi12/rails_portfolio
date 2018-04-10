@@ -17,10 +17,6 @@ class PortfoliosController < ApplicationController
     head :no_content
   end
 
-  def angular
-    @portfolio_items = Portfolio.angular_portfolio_items
-  end
-
   def rails_portfolio
     @portfolio_items = Portfolio.ruby_on_rails_portfolio_items
   end
