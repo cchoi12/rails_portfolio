@@ -1,45 +1,13 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> This is going to be a simple portfolio built on Rails.
 
 # Portfolio Application
-> This is going to be a simple portfolio.
+1. This project was mainly used to learn about full stack Rails applications.
+2. Learn about Rails 5 features such as ActionCable.
+3. Tried experimenting with ActiveStorage, but ran into some issues. I instead went back to paperclip & AWS S3 for bucket storage.
 
 ### Features
 - Real time chat engines
 - Blog
 - portfolio
-- Drag and droppin
-
-### Code examples
-
-```ruby
-  def my_great_method
-    puts 'here it is mang'
-  end
-```
-
-```javascript
-  var what = what;
-```
+- Drag and drop portfolio orders
